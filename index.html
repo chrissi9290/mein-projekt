@@ -14,23 +14,29 @@
             padding: 0;
         }
 
-        /* Parallax-Hintergrund (noch kleinere Höhe) */
+        /* Parallax-Hintergrund (noch kleinere Höhe für mobile Ansicht) */
         .parallax {
             background: url('DEIN-HINTERGRUND-BILD.jpg') no-repeat center center fixed;
             background-size: cover;
-            height: 120px; /* Noch kleiner als vorher */
+            height: 120px;
         }
 
-        /* Haupt-Container (noch weniger Padding) */
+        /* Haupt-Container */
         .container {
-            padding: 10px 20px; /* Statt 30px */
+            padding: 10px 20px;
+        }
+
+        /* Logo anpassen */
+        .logo {
+            width: 800px;
+            max-width: 90%; /* Passt sich der Bildschirmgröße an */
         }
 
         /* Textblock mit Blocksatz & größerer Schrift */
         .content {
             max-width: 800px;
             margin: 20px auto;
-            background: #87CEEB; /* Light Blue */
+            background: #87CEEB;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
@@ -40,13 +46,8 @@
             color: black;
         }
 
-        /* Seite länger machen */
-        .spacer {
-            height: 300px; /* Fügt unten mehr Platz hinzu */
-        }
-
-        /* "Buy Now"-Button */
-        .buy-button {
+        /* Buttons für Kauf & Social */
+        .buy-button, .social-button {
             background: linear-gradient(45deg, #FFD700, #FFA500);
             color: black;
             padding: 15px 25px;
@@ -56,14 +57,21 @@
             border-radius: 10px;
             cursor: pointer;
             transition: transform 0.2s, background 0.3s;
+            display: inline-block;
+            margin: 10px;
         }
 
-        .buy-button:hover {
+        .buy-button:hover, .social-button:hover {
             transform: scale(1.1);
             background: linear-gradient(45deg, #FFA500, #FFD700);
         }
 
-        /* Logos ganz unten fixieren */
+        /* Spacer für bessere Sichtbarkeit */
+        .spacer {
+            height: 300px;
+        }
+
+        /* Logos unten fixieren */
         .logo-container {
             position: fixed;
             bottom: 0;
@@ -71,13 +79,46 @@
             display: flex;
             justify-content: center;
             gap: 20px;
-            background: rgba(0, 0, 0, 0.2); /* Leicht transparenter Hintergrund */
-            padding: 15px 0; /* Mehr Platz für bessere Sichtbarkeit */
+            background: rgba(0, 0, 0, 0.2);
+            padding: 15px 0;
         }
 
         .logo-container a img {
             width: 40px;
             height: 40px;
+        }
+
+        /* 🔹 Mobile Anpassungen für kleine Bildschirme */
+        @media screen and (max-width: 768px) {
+            .parallax {
+                height: 80px; /* Noch kleiner für Handys */
+            }
+
+            .content {
+                font-size: 18px; /* Kleinere Schrift für mobile Ansicht */
+                padding: 15px;
+            }
+
+            .buy-button, .social-button {
+                padding: 10px 15px;
+                font-size: 16px;
+                width: 90%; /* Buttons über die ganze Breite */
+            }
+
+            .logo-container {
+                flex-direction: column; /* Logos untereinander für bessere Übersicht */
+                align-items: center;
+                gap: 10px;
+                padding: 10px;
+            }
+
+            .logo-container a img {
+                width: 35px; /* Logos leicht verkleinert */
+            }
+
+            .spacer {
+                height: 200px; /* Etwas weniger Abstand für mobile Ansicht */
+            }
         }
     </style>
 </head>
@@ -88,7 +129,7 @@
 
     <div class="container">
         <!-- Logo über der Überschrift -->
-        <img src="https://i.imgur.com/FcrAJe8.jpeg" alt="Friedrich Coin Logo" width="800">
+        <img src="https://i.imgur.com/FcrAJe8.jpeg" alt="Friedrich Coin Logo" class="logo">
         <h1>$FRIEDRICH</h1>
 
         <!-- Beschreibung -->
@@ -106,13 +147,13 @@
         <!-- Social-Buttons für Twitter und Telegram -->
         <br><br>
         <a href="https://t.me/friedrichmerzz" target="_blank">
-            <button style="background-color: #0088cc; color: white; padding: 10px 20px; border-radius: 5px;">
+            <button class="social-button" style="background-color: #0088cc; color: white;">
                 📢 Join Our Telegram
             </button>
         </a>
 
         <a href="https://x.com/friedrichonsol" target="_blank">
-            <button style="background-color: #1DA1F2; color: white; padding: 10px 20px; border-radius: 5px;">
+            <button class="social-button" style="background-color: #1DA1F2; color: white;">
                 🐦 Follow Us on Twitter
             </button>
         </a>
@@ -121,7 +162,7 @@
     <!-- Zusätzlicher Platz am Ende, damit Buttons nicht überdeckt werden -->
     <div class="spacer"></div>
 
-    <!-- Logos unten (jetzt fixiert mit mehr Platz) -->
+    <!-- Logos unten (jetzt fixiert mit mehr Platz & für mobile Ansicht optimiert) -->
     <div class="logo-container">
         <a href="https://dexscreener.com/" target="_blank">
             <img src="https://imgur.com/jsB72Q8.jpeg" alt="DEXScreener">
