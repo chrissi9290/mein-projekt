@@ -13,16 +13,83 @@
             margin: 0;
             padding: 0;
         }
-        .container {
-            padding: 50px 20px;
+
+        /* Live-Preis-Ticker */
+        #price-ticker {
+            background: #FFD700;
+            color: black;
+            font-size: 18px;
+            padding: 10px;
+            font-weight: bold;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            text-align: center;
+            z-index: 1000;
         }
+
+        /* Parallax-Hintergrund */
+        .parallax {
+            background: url('DEIN-HINTERGRUND-BILD.jpg') no-repeat center center fixed;
+            background-size: cover;
+            height: 400px;
+        }
+
+        /* Haupt-Container */
+        .container {
+            padding: 70px 20px;
+        }
+
+        /* Textblock mit Blocksatz & größerer Schrift */
         .content {
             max-width: 800px;
-            margin: 0 auto;
-            background: rgba(255, 255, 255, 0.1);
+            margin: 20px auto;
+            background: #87CEEB; /* Light Blue */
             padding: 20px;
             border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: justify;
+            font-size: 22px;
+            line-height: 1.6;
+            color: black;
         }
+
+        /* "Buy Now"-Button */
+        .buy-button {
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            color: black;
+            padding: 15px 25px;
+            font-size: 20px;
+            font-weight: bold;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.2s, background 0.3s;
+        }
+
+        .buy-button:hover {
+            transform: scale(1.1);
+            background: linear-gradient(45deg, #FFA500, #FFD700);
+        }
+
+        /* Chart-Button (links ausgerichtet) */
+        .chart-container {
+            text-align: left;
+            padding-left: 20px;
+        }
+
+        .chart-button {
+            background-color: #FFD700;
+            color: black;
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Logos unten */
         .logo-container {
             position: fixed;
             bottom: 20px;
@@ -31,47 +98,85 @@
             justify-content: center;
             gap: 20px;
         }
+
         .logo-container a img {
             width: 40px;
             height: 40px;
-        }
-        .header-image {
-            width: 800px; /* Passe die Größe nach Bedarf an */
-            border-radius: 10px;
         }
     </style>
 </head>
 <body>
 
+    <!-- Live-Preis-Ticker -->
+    <div id="price-ticker">Loading price...</div>
+
+    <!-- Parallax-Banner -->
+    <div class="parallax"></div>
+
     <div class="container">
-        <img src="https://i.imgur.com/FcrAJe8.jpeg" alt="Friedrich Coin Logo" class="header-image">
+        <!-- Logo über der Überschrift -->
+        <img src="https://i.imgur.com/FcrAJe8.jpeg" alt="Friedrich Coin Logo" width="800">
         <h1>$FRIEDRICH</h1>
+
+        <!-- DEXScreener Chart Button (links) -->
+        <div class="chart-container">
+            <a href="https://dexscreener.com/solana/a5l92fexqncrytaoch2zpqub5vldtnn6jha5cvad5whj" target="_blank">
+                <button class="chart-button">📈 Live Chart auf DEXScreener ansehen</button>
+            </a>
+        </div>
+
+        <!-- Beschreibung -->
         <div class="content">
             <p>Introducing <strong>$FRIEDRICH</strong>, the memecoin inspired by Germany's newly elected Chancellor, Friedrich Merz. A former BlackRock executive and seasoned economic professional, Merz brings a wealth of financial expertise to his leadership role.</p>
             <p>His election victory has garnered international attention, with U.S. President Donald Trump hailing it as a "great day for Germany and the United States." Merz is a man of action, committed to addressing pressing issues like the migration crisis by proposing stricter border controls.</p>
             <p>Investing in <strong>$FRIEDRICH</strong> aligns you with a future of economic revitalization and decisive leadership under Chancellor Merz's guidance. <strong>DON'T SLEEP ON $FRIEDRICH!</strong></p>
         </div>
+
+        <!-- Call-to-Action Button -->
+        <a href="DEIN-KAUF-LINK" target="_blank">
+            <button class="buy-button">🚀 Buy $FRIEDRICH Now</button>
+        </a>
+
+        <!-- Social-Buttons für Twitter und Telegram -->
+        <br><br>
+        <a href="https://t.me/friedrichmerzz" target="_blank">
+            <button style="background-color: #0088cc; color: white; padding: 10px 20px; border-radius: 5px;">
+                📢 Join Our Telegram
+            </button>
+        </a>
+
+        <a href="https://x.com/friedrichonsol" target="_blank">
+            <button style="background-color: #1DA1F2; color: white; padding: 10px 20px; border-radius: 5px;">
+                🐦 Follow Us on Twitter
+            </button>
+        </a>
     </div>
 
+    <!-- Logos unten -->
     <div class="logo-container">
-    <a href="https://dexscreener.com/solana/a5l92fexqncrytaoch2zpqub5vldtnn6jha5cvad5whj" target="_blank">
-        <img src="https://imgur.com/jsB72Q8.jpeg" alt="DEXScreener" width="40">
-    </a>
-    <a href="https://x.com/friedrichonsol" target="_blank">
-        <img src="https://i.imgur.com/sY3vPnC.jpeg" alt="Twitter" width="40">
-    </a>
-    <a href="https://t.me/friedrichmerzz" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Telegram_2019_Logo.svg" alt="Telegram" width="40">
-    </a>
+        <a href="https://dexscreener.com/" target="_blank">
+            <img src="https://imgur.com/jsB72Q8.jpeg" alt="DEXScreener">
+        </a>
+        <a href="https://x.com/friedrichonsol" target="_blank">
+            <img src="https://i.imgur.com/sY3vPnC.jpeg" alt="Twitter">
+        </a>
+        <a href="https://t.me/friedrichmerzz" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Telegram_2019_Logo.svg" alt="Telegram">
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=61572844793604" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
+        </a>
+    </div>
 
-      <a href="https://www.facebook.com/profile.php?id=61572844793604" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
-    </a>
-        
-</div>
-
-
-
+    <!-- Live-Preis Script -->
+    <script>
+        function updatePrice() {
+            let fakePrice = (Math.random() * 0.01).toFixed(4);
+            document.getElementById("price-ticker").innerText = "$FRIEDRICH Price: $" + fakePrice + " 🔥";
+        }
+        setInterval(updatePrice, 3000);
+        updatePrice();
+    </script>
 
 </body>
 </html>
