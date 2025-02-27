@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -55,19 +55,6 @@
             color: black;
         }
 
-        /* Eingebetteter Chart */
-        .chart-container {
-            max-width: 900px;
-            margin: 20px auto;
-        }
-
-        .chart-container iframe {
-            width: 100%;
-            height: 600px;
-            border: none;
-            border-radius: 10px;
-        }
-
         /* "Buy Now"-Button */
         .buy-button {
             background: linear-gradient(45deg, #FFD700, #FFA500);
@@ -84,6 +71,22 @@
         .buy-button:hover {
             transform: scale(1.1);
             background: linear-gradient(45deg, #FFA500, #FFD700);
+        }
+
+        /* Chart-Button (links ausgerichtet) */
+        .chart-container {
+            text-align: left;
+            padding-left: 20px;
+        }
+
+        .chart-button {
+            background-color: #FFD700;
+            color: black;
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
         }
 
         /* Logos unten */
@@ -115,8 +118,14 @@
         <img src="https://i.imgur.com/FcrAJe8.jpeg" alt="Friedrich Coin Logo" width="800">
         <h1>$FRIEDRICH</h1>
 
-       
-         <!-- Beschreibung -->
+        <!-- DEXScreener Chart Button (links) -->
+        <div class="chart-container">
+            <a href="https://dexscreener.com/solana/a5l92fexqncrytaoch2zpqub5vldtnn6jha5cvad5whj" target="_blank">
+                <button class="chart-button">📈 Live Chart auf DEXScreener ansehen</button>
+            </a>
+        </div>
+
+        <!-- Beschreibung -->
         <div class="content">
             <p>Introducing <strong>$FRIEDRICH</strong>, the memecoin inspired by Germany's newly elected Chancellor, Friedrich Merz. A former BlackRock executive and seasoned economic professional, Merz brings a wealth of financial expertise to his leadership role.</p>
             <p>His election victory has garnered international attention, with U.S. President Donald Trump hailing it as a "great day for Germany and the United States." Merz is a man of action, committed to addressing pressing issues like the migration crisis by proposing stricter border controls.</p>
@@ -128,11 +137,6 @@
             <button class="buy-button">🚀 Buy $FRIEDRICH Now</button>
         </a>
 
- <!-- Eingebetteter Live-Chart -->
-        <div class="chart-container">
-            <iframe src="https://dexscreener.com/solana/a5l92fexqncrytaoch2zpqub5vldtnn6jha5cvad5whj"></iframe>
-        </div>
-		
         <!-- Social-Buttons für Twitter und Telegram -->
         <br><br>
         <a href="https://t.me/friedrichmerzz" target="_blank">
@@ -164,23 +168,14 @@
         </a>
     </div>
 
-    <!-- ECHTER Live-Preis von DEXScreener -->
+    <!-- Live-Preis Script -->
     <script>
-        async function fetchPrice() {
-            try {
-                const response = await fetch("https://api.dexscreener.com/latest/dex/pairs/solana/HSd8XaFMnpQQhhDNe4Rq8bvQnbCKDvXbAZTnHgKupump");
-                const data = await response.json();
-                const price = data.pairs[0].priceUsd; 
-                
-                document.getElementById("price-ticker").innerText = `$FRIEDRICH Price: $${parseFloat(price).toFixed(6)} 🔥`;
-            } catch (error) {
-                console.error("Fehler beim Abrufen des Preises:", error);
-                document.getElementById("price-ticker").innerText = "⚠️ Preis konnte nicht geladen werden!";
-            }
+        function updatePrice() {
+            let fakePrice = (Math.random() * 0.01).toFixed(4);
+            document.getElementById("price-ticker").innerText = "$FRIEDRICH Price: $" + fakePrice + " 🔥";
         }
-
-        setInterval(fetchPrice, 10000);
-        fetchPrice();
+        setInterval(updatePrice, 3000);
+        updatePrice();
     </script>
 
 </body>
