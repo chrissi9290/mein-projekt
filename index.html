@@ -14,16 +14,16 @@
             padding: 0;
         }
 
-        /* Parallax-Hintergrund */
+        /* Parallax-Hintergrund (noch kleinere Höhe) */
         .parallax {
             background: url('DEIN-HINTERGRUND-BILD.jpg') no-repeat center center fixed;
             background-size: cover;
-            height: 400px;
+            height: 120px; /* Noch kleiner als vorher */
         }
 
-        /* Haupt-Container */
+        /* Haupt-Container (noch weniger Padding) */
         .container {
-            padding: 70px 20px;
+            padding: 10px 20px; /* Statt 30px */
         }
 
         /* Textblock mit Blocksatz & größerer Schrift */
@@ -38,6 +38,11 @@
             font-size: 22px;
             line-height: 1.6;
             color: black;
+        }
+
+        /* Seite länger machen */
+        .spacer {
+            height: 300px; /* Fügt unten mehr Platz hinzu */
         }
 
         /* "Buy Now"-Button */
@@ -58,14 +63,16 @@
             background: linear-gradient(45deg, #FFA500, #FFD700);
         }
 
-        /* Logos unten */
+        /* Logos ganz unten fixieren */
         .logo-container {
             position: fixed;
-            bottom: 20px;
+            bottom: 0;
             width: 100%;
             display: flex;
             justify-content: center;
             gap: 20px;
+            background: rgba(0, 0, 0, 0.2); /* Leicht transparenter Hintergrund */
+            padding: 15px 0; /* Mehr Platz für bessere Sichtbarkeit */
         }
 
         .logo-container a img {
@@ -82,15 +89,15 @@
     <div class="container">
         <!-- Logo über der Überschrift -->
         <img src="https://i.imgur.com/FcrAJe8.jpeg" alt="Friedrich Coin Logo" width="800">
-        
+        <h1>$FRIEDRICH</h1>
 
-      <!-- Beschreibung -->
+        <!-- Beschreibung -->
         <div class="content">
             <p>Introducing <strong>$FRIEDRICH</strong>, the memecoin inspired by Germany's newly elected Chancellor, Friedrich Merz. A former BlackRock executive and seasoned economic professional, Merz brings a wealth of financial expertise to his leadership role.</p>
             <p>His election victory has garnered international attention, with U.S. President Donald Trump hailing it as a "great day for Germany and the United States." Merz is a man of action, committed to addressing pressing issues like the migration crisis by proposing stricter border controls.</p>
             <p>Investing in <strong>$FRIEDRICH</strong> aligns you with a future of economic revitalization and decisive leadership under Chancellor Merz's guidance. <strong>DON'T SLEEP ON $FRIEDRICH!</strong></p>
         </div>
-        
+
         <!-- Call-to-Action Button -->
         <a href="DEIN-KAUF-LINK" target="_blank">
             <button class="buy-button">🚀 Buy $FRIEDRICH Now</button>
@@ -111,7 +118,10 @@
         </a>
     </div>
 
-    <!-- Logos unten -->
+    <!-- Zusätzlicher Platz am Ende, damit Buttons nicht überdeckt werden -->
+    <div class="spacer"></div>
+
+    <!-- Logos unten (jetzt fixiert mit mehr Platz) -->
     <div class="logo-container">
         <a href="https://dexscreener.com/" target="_blank">
             <img src="https://imgur.com/jsB72Q8.jpeg" alt="DEXScreener">
