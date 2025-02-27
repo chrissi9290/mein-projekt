@@ -6,7 +6,7 @@
     <title>Friedrich Coin</title>
     <style>
         body {
-            background-color: #589ecc; /* Blau aus deinem Bild */
+            background-color: #589ecc;
             color: white;
             font-family: Arial, sans-serif;
             text-align: center;
@@ -14,25 +14,22 @@
             padding: 0;
         }
 
-        /* Parallax-Hintergrund (noch kleinere Höhe für mobile Ansicht) */
+        /* Parallax-Hintergrund */
         .parallax {
             background: url('DEIN-HINTERGRUND-BILD.jpg') no-repeat center center fixed;
             background-size: cover;
             height: 120px;
         }
 
-        /* Haupt-Container */
         .container {
             padding: 10px 20px;
         }
 
-        /* Logo anpassen */
         .logo {
             width: 800px;
-            max-width: 90%; /* Passt sich der Bildschirmgröße an */
+            max-width: 90%;
         }
 
-        /* Textblock mit Blocksatz & größerer Schrift */
         .content {
             max-width: 800px;
             margin: 20px auto;
@@ -46,7 +43,6 @@
             color: black;
         }
 
-        /* Buttons für Kauf & Social */
         .buy-button, .social-button {
             background: linear-gradient(45deg, #FFD700, #FFA500);
             color: black;
@@ -66,9 +62,27 @@
             background: linear-gradient(45deg, #FFA500, #FFD700);
         }
 
-        /* Spacer für bessere Sichtbarkeit */
         .spacer {
             height: 300px;
+        }
+
+        /* Chart-Container */
+        .chart-container {
+            max-width: 900px;
+            margin: 20px auto;
+        }
+
+        .chart-container iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+            border-radius: 10px;
+        }
+
+        /* Twitter-Feed Styling */
+        .twitter-feed {
+            max-width: 400px;
+            margin: 20px auto;
         }
 
         /* Logos unten fixieren */
@@ -81,7 +95,7 @@
             gap: 15px;
             background: rgba(0, 0, 0, 0.2);
             padding: 10px 0;
-            flex-wrap: nowrap; /* Verhindert Zeilenumbruch */
+            flex-wrap: nowrap;
         }
 
         .logo-container a img {
@@ -89,62 +103,38 @@
             height: 40px;
         }
 
-        /* 🔹 Mobile Anpassungen für kleine Bildschirme */
         @media screen and (max-width: 768px) {
-            .parallax {
-                height: 80px; /* Noch kleiner für Handys */
-            }
-
-            .content {
-                font-size: 18px; /* Kleinere Schrift für mobile Ansicht */
-                padding: 15px;
-            }
-
-            .buy-button, .social-button {
-                padding: 10px 15px;
-                font-size: 16px;
-                width: 90%; /* Buttons über die ganze Breite */
-            }
-
-            .logo-container {
-                flex-wrap: nowrap; /* Immer nebeneinander */
-                justify-content: space-around; /* Gleichmäßige Verteilung */
-                padding: 10px;
-            }
-
-            .logo-container a img {
-                width: 35px; /* Kleinere Logos für bessere Sichtbarkeit */
-            }
-
-            .spacer {
-                height: 200px; /* Etwas weniger Abstand für mobile Ansicht */
-            }
+            .parallax { height: 80px; }
+            .content { font-size: 18px; padding: 15px; }
+            .buy-button { width: 90%; padding: 10px 15px; font-size: 16px; }
+            .twitter-feed { max-width: 100%; }
+            .chart-container iframe { height: 400px; } /* Kleinere Höhe für Mobile */
+            .logo-container { flex-wrap: nowrap; justify-content: space-around; padding: 10px; }
+            .logo-container a img { width: 35px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Parallax-Banner -->
     <div class="parallax"></div>
 
     <div class="container">
-        <!-- Logo über der Überschrift -->
         <img src="https://i.imgur.com/FcrAJe8.jpeg" alt="Friedrich Coin Logo" class="logo">
-        <h1>$FRIEDRICH</h1>
+        <h1></h1>
 
+         <!-- Beschreibung -->
         <!-- Beschreibung -->
-        <div class="content">
-            <p>Introducing <strong>$FRIEDRICH</strong>, the memecoin inspired by Germany's newly elected Chancellor, Friedrich Merz. A former BlackRock executive and seasoned economic professional, Merz brings a wealth of financial expertise to his leadership role.</p>
-            <p>His election victory has garnered international attention, with U.S. President Donald Trump hailing it as a "great day for Germany and the United States." Merz is a man of action, committed to addressing pressing issues like the migration crisis by proposing stricter border controls.</p>
-            <p>Investing in <strong>$FRIEDRICH</strong> aligns you with a future of economic revitalization and decisive leadership under Chancellor Merz's guidance. <strong>DON'T SLEEP ON $FRIEDRICH!</strong></p>
-        </div>
+<div class="content">
+    <p>Introducing <strong>$FRIEDRICH</strong>, the memecoin inspired by Germany's newly elected Chancellor, Friedrich Merz. A former BlackRock executive and seasoned economic professional, Merz brings a wealth of financial expertise to his leadership role.</p>
+    <p>His election victory has garnered international attention, with <strong>U.S. President Donald Trump</strong> hailing it as a "great day for Germany and the United States." Merz is a man of action, committed to addressing pressing issues like the migration crisis by proposing stricter border controls.</p>
+    <p>Investing in <strong>$FRIEDRICH</strong> aligns you with a future of economic revitalization and decisive leadership under Chancellor Merz's guidance. <strong>DON'T SLEEP ON $FRIEDRICH!</strong></p>
+</div>
 
-        <!-- Call-to-Action Button -->
+
         <a href="DEIN-KAUF-LINK" target="_blank">
             <button class="buy-button">🚀 Buy $FRIEDRICH Now</button>
         </a>
 
-        <!-- Social-Buttons für Twitter und Telegram -->
         <br><br>
         <a href="https://t.me/friedrichmerzz" target="_blank">
             <button class="social-button" style="background-color: #0088cc; color: white;">
@@ -157,25 +147,32 @@
                 🐦 Follow Us on Twitter
             </button>
         </a>
+
+        <!-- DEXTools Chart -->
+        <div class="chart-container">
+            <h2>📊 Live Chart</h2>
+            <iframe src="https://www.dextools.io/widget-chart/en/solana/A5L92fEXQNCRytAoch2ZpqUB5VLdTnn6Jha5cvaD5wHJ?theme=dark&chartType=1&chartResolution=30m&drawingToolbars=false"></iframe>
+        </div>
+
+        <!-- Twitter-Feed (Zeigt nur die letzten 3 Tweets) -->
+        <div class="twitter-feed">
+            <a class="twitter-timeline" data-height="300" data-theme="dark" data-chrome="noheader nofooter noborders"
+                data-tweet-limit="3"
+                href="https://twitter.com/friedrichonsol?ref_src=twsrc%5Etfw">
+                Letzte Tweets von $FRIEDRICH
+            </a>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+
     </div>
 
-    <!-- Zusätzlicher Platz am Ende, damit Buttons nicht überdeckt werden -->
     <div class="spacer"></div>
 
-    <!-- Logos unten (jetzt fixiert & quer, auch in Mobile) -->
     <div class="logo-container">
-        <a href="https://dexscreener.com/" target="_blank">
-            <img src="https://imgur.com/jsB72Q8.jpeg" alt="DEXScreener">
-        </a>
-        <a href="https://x.com/friedrichonsol" target="_blank">
-            <img src="https://i.imgur.com/sY3vPnC.jpeg" alt="Twitter">
-        </a>
-        <a href="https://t.me/friedrichmerzz" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Telegram_2019_Logo.svg" alt="Telegram">
-        </a>
-        <a href="https://www.facebook.com/profile.php?id=61572844793604" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
-        </a>
+        <a href="https://dexscreener.com/" target="_blank"><img src="https://imgur.com/jsB72Q8.jpeg"></a>
+        <a href="https://x.com/friedrichonsol" target="_blank"><img src="https://i.imgur.com/sY3vPnC.jpeg"></a>
+        <a href="https://t.me/friedrichmerzz" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Telegram_2019_Logo.svg"></a>
+        <a href="https://www.facebook.com/profile.php?id=61572844793604" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"></a>
     </div>
 
 </body>
